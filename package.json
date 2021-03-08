@@ -2,6 +2,12 @@
   "name": "youtube_search",
   "version": "0.1.0",
   "private": true,
+  "description": "Is an exam of F2E for Morningshop",
+  "author": {
+    "name": "David Li",
+    "email": "z22919456@gmail.com",
+    "url": "https://www.linkedin.com/in/david-li-73b76217b/"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^1.1.0",
     "@testing-library/jest-dom": "^4.2.4",
@@ -32,5 +38,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^7.21.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0"
   }
 }
