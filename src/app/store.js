@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import searcherReducer from '../features/searcherSlice';
 
 export default configureStore({
   reducer: {
-    counter: counterReducer,
+    searcher: searcherReducer,
   },
 });
