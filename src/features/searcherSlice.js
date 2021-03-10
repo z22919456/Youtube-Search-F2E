@@ -98,9 +98,4 @@ export const goNextPage = (page) => (dispatch, getState) => {
     });
 };
 
-export const selectPage = ({ searcher }) => ({
-  currentPageNum: searcher.currentPageNum,
-  pageTokenList: searcher.pageTokenList,
-});
-
 export default searcherSlice.reducer;
