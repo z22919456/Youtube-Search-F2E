@@ -6,6 +6,7 @@ import 'normalize.css';
 import SearchToolBar from './components/SearchToolbar';
 import theme from './theme';
 import VideoListContainer from './components/VideoListContainer';
+import SearchPagination from './components/SearchPagination';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <SearchToolBar />
         <VideoListContainer />
+        <SearchPagination />
       </ThemeProvider>
     </MuiThemeProvider>
   );
