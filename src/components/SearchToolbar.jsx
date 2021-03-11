@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import { ReactComponent as Logo } from '../assets/images/logo.svg';
 import SearchForm from './SearchForm';
 
+const StyledAppBar = styled(AppBar)`
+  color: ${({ theme }) => theme.palette.background.defalut};
+`;
+
 const LogoIcon = styled.div`
     width: 100px;
     svg{
@@ -14,7 +18,7 @@ const LogoIcon = styled.div`
 function SearchToolBar() {
   return (
 
-    <AppBar color="default">
+    <StyledAppBar color="default">
       <Container>
         <Toolbar disableGutters>
           <LogoIcon>
@@ -23,7 +27,7 @@ function SearchToolBar() {
           <SearchForm />
         </Toolbar>
       </Container>
-    </AppBar>
+    </StyledAppBar>
   );
 }
 

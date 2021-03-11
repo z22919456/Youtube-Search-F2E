@@ -30,7 +30,6 @@ function SearchForm() {
   const defaultKeyword = useSelector(selectKeywrod);
   const [keyword, setKeyword] = useState(defaultKeyword);
   const dispatch = useDispatch();
-  console.log(searchInputFocus);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();

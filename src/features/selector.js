@@ -4,3 +4,5 @@ export const selectPage = ({ searcher }) => ({
 });
 
 export const selectKeywrod = ({ searcher }) => searcher.keyword;
+
+export const selectItems = ({ searcher }) => searcher.items;
