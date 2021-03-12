@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Container } from '@material-ui/core';
 import styled from 'styled-components';
 import { goNextPage } from '../features/searcherSlice';
-import { selectPageList } from '../features/selector';
+import { selectPage } from '../features/selector';
 
 // TODO: last page shoud not have next page btn in pagination
 // TODO: add keywor & page to route params
@@ -17,13 +17,13 @@ const StyledContianer = styled(Container)`
 
 function SearchPagination() {
   const dispatch = useDispatch();
-  const pageList = useSelector(selectPageList);
+  const { currentPageNum, pageTokenList } = useSelector(selectPage);
   const handlePageChange = (e, value) => {
     dispatch(goNextPage(value));
   };
   return (
     <StyledContianer>
-      <Pagination color="primary" variant="outlined" count={pageList.length} onChange={handlePageChange} />
+      <Pagination color="primary" variant="outlined" page={parseInt(currentPageNum, 10)} count={pageTokenList.length} onChange={handlePageChange} />
     </StyledContianer>
   );
 }

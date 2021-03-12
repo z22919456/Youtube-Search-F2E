@@ -18,7 +18,7 @@ const LogoIcon = styled.div`
 function SearchToolBar() {
   return (
 
-    <StyledAppBar color="default">
+    <StyledAppBar color="inherit">
       <Container>
         <Toolbar disableGutters>
           <LogoIcon>

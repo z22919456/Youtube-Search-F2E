@@ -7,4 +7,7 @@ export const selectKeywrod = ({ searcher }) => searcher.keyword;
 
 export const selectItems = ({ searcher }) => searcher.items;
 
-export const selectPageList = ({ searcher }) => searcher.pageTokenList;
+export const selectQuery = ({ searcher }) => ({
+  keyword: searcher.keyword,
+  page: searcher.currentPageNum,
+});
