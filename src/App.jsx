@@ -10,7 +10,7 @@ import VideoListContainer from './components/VideoListContainer';
 import SearchPagination from './components/SearchPagination';
 import useQueryString from './components/useQueryString';
 import {
-  search, restoreState, restorePageByQueryString,
+  search, restoreStateFormLocalStorage, restorePageByQueryString,
 } from './features/searcherSlice';
 import { selectQuery } from './features/selector';
 import { loadState } from './utils/localStorage';
@@ -22,15 +22,20 @@ function App() {
 
   useEffect(() => {
     const state = loadState();
+    // 確認現在給的pageToken 與關鍵字是對應得到的
+    if (state && queryState && state.keyword !== queryState.keyword) {
+      delete state.pageTokenList;
+    }
+
     if (state) {
-      dispatch(restoreState(state));
+      dispatch(restoreStateFormLocalStorage(state));
       if (Object.keys(query).length !== 0) {
         dispatch(restorePageByQueryString(query));
       } else {
         dispatch(search(''));
       }
     } else {
-      dispatch(search(''));
+      dispatch(search(query?.keyword || ''));
     }
   }, []);
 

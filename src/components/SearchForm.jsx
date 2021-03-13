@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   Divider, IconButton, InputAdornment, InputBase,
@@ -30,6 +30,10 @@ function SearchForm() {
   const defaultKeyword = useSelector(selectKeywrod);
   const [keyword, setKeyword] = useState(defaultKeyword);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setKeyword(defaultKeyword);
+  }, [defaultKeyword]);
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
