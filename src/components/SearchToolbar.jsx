@@ -22,7 +22,9 @@ function SearchToolBar() {
       <Container>
         <Toolbar disableGutters>
           <LogoIcon>
-            <Logo alt="logo" />
+            <a href="/">
+              <Logo alt="logo" />
+            </a>
           </LogoIcon>
           <SearchForm />
         </Toolbar>
