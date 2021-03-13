@@ -19,7 +19,7 @@ function VideoListContainer() {
       <ResultInfo />
       <div>
         <Grid container spacing={4}>
-          {loading ? [1, 2, 3, 4, 5, 6, 7, 8, 9, 0].map((i) => (
+          {loading ? Array.from({ length: 24 }).map((i) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={i}>
               <VideoLoading />
             </Grid>
