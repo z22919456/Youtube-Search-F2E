@@ -4,7 +4,10 @@ import styled from 'styled-components';
 import moment from '../utils/moment';
 
 const Item = styled.div`
-  
+
+  &:hover .thumbnail-container::before{
+    opacity: .2
+  }
   .thumbnail-container{
     position: relative;
     display: block;
@@ -22,8 +25,21 @@ const Item = styled.div`
       z-index: 10;
       transition: all .2s ease-in;
     }
-    &:hover::before{
-      opacity: .2
+    &::after{
+      content: "";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      background: white;
+      opacity: .1;
+      ${({ varient }) => (varient === 'youtube#channel' ? `
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          width: 56.25% !important;
+          border-radius: 50%;
+        ` : '')};
     }
     img{
       position: absolute;
@@ -70,6 +86,10 @@ const Item = styled.div`
   }
 `;
 
+const Link = styled.a`
+  text-decoration: none;
+`;
+
 const videoUrl = (videoId) => `https://youtube.com.tw/watch?v=${videoId}`;
 const channelUrl = (channelId) => `https://youtube.com.tw/channel/${channelId}`;
 
@@ -86,7 +106,9 @@ function Video({ item }) {
         </div>
       </a>
       <div className="details">
-        <h1>{title}</h1>
+        <Link href={id.kine === 'youtube#channel' ? channelUrl(channelId) : videoUrl(id.videoId)}>
+          <h1>{title}</h1>
+        </Link>
         {id.kind !== 'youtube#channel'
           && (
             <p className="channel">
